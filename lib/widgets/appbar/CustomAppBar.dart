@@ -12,7 +12,7 @@ class CustomAppbar extends StatelessWidget {
       title: Text("Home"),
       flexibleSpace: Center(child: AnimatedTextKit(
           animatedTexts: [
-            AnimatedText(text: "")
+            TyperAnimatedText("Hello")
           ],
       )
       ),
