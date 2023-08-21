@@ -4,6 +4,18 @@ class CustomBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Bottom Bar") ;
+    return Card(
+      child: Container(
+        // decoration: ,
+        height: 50,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            ],
+        ),
+      ),
+    );
   }
 }

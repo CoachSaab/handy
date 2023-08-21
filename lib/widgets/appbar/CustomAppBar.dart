@@ -13,7 +13,7 @@ class CustomAppbar extends StatelessWidget {
       title: Text("Home"),
       actions: [
         IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-        IconButton(onPressed: (){}, icon: Icon(Icons.account_circle))
+        IconButton(onPressed: (){}, icon: Icon(Icons.notifications))
       ],
       flexibleSpace: Container(
         decoration: const BoxDecoration(
@@ -30,8 +30,8 @@ class CustomAppbar extends StatelessWidget {
                 TyperAnimatedText(
                     "Handy welcomes you",
                     textStyle: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 19,
                       color: Color.fromRGBO(63, 78, 114, 1)
                     ))
               ],
