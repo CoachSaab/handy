@@ -7,14 +7,37 @@ class CustomAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       floating: true,
+
       snap:  true,
-      pinned: false,
+      pinned: true,
       title: Text("Home"),
-      flexibleSpace: Center(child: AnimatedTextKit(
-          animatedTexts: [
-            TyperAnimatedText("Hello")
-          ],
-      )
+      actions: [
+        IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+        IconButton(onPressed: (){}, icon: Icon(Icons.account_circle))
+      ],
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment(0.71, -0.71),
+            end: Alignment(-0.71, 0.71),
+            colors: [Color(0xFFFFD6FF), Color(0xFFE7C6FF), Color(0xFFB8C0FF)],
+          ),
+        ),
+        child: FlexibleSpaceBar(
+          
+          background: Center(child: AnimatedTextKit(
+              animatedTexts: [
+                TyperAnimatedText(
+                    "Handy welcomes you",
+                    textStyle: const TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      color: Color.fromRGBO(63, 78, 114, 1)
+                    ))
+              ],
+          )
+          ),
+        ),
       ),
       expandedHeight: 250,
     );
