@@ -5,7 +5,13 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: Color.fromRGBO(184, 192, 255, 1),
     foregroundColor: Color.fromRGBO(63, 78, 114, 1)
   ),
-  backgroundColor: const Color.fromRGBO(231, 198, 255, 1)
+  iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+
+        iconColor: MaterialStatePropertyAll(Color.fromRGBO(63, 78, 114, 1)),
+        foregroundColor: MaterialStatePropertyAll(Color.fromRGBO(63, 78, 114, 1))
+      )
+  )
 );
 
 ThemeData darkTheme = ThemeData(

@@ -28,7 +28,7 @@ class CustomAppbar extends StatelessWidget {
           background: Center(child: AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
-                    "This Is a Test POUSH",
+                    "",
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 19,

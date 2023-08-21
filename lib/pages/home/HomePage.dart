@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:handy/widgets/appbar/CustomAppBar.dart';
+import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 import 'package:handy/widgets/drawer/customDrawer.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,6 +34,7 @@ class HomePage extends StatelessWidget {
                   );
               },)
               ),
+          CustomBottomBar()
         ],
       )
     );
