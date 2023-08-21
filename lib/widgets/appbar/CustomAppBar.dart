@@ -28,7 +28,7 @@ class CustomAppbar extends StatelessWidget {
           background: Center(child: AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
-                    "Handy welcomes you",
+                    "This Is a Test POUSH",
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 19,
@@ -39,7 +39,7 @@ class CustomAppbar extends StatelessWidget {
           ),
         ),
       ),
-      expandedHeight: 250,
+      expandedHeight: 200,
     );
   }
 }
