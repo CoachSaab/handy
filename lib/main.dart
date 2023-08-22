@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handy/pages/home/HomePage.dart';
+import 'package:handy/pages/profile/Profile.dart';
 import 'package:handy/utils/Theme/theme.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: lightTheme,
-      home: const HomePage(),
+      home: const ProfilePage(),
       debugShowCheckedModeBanner: false,
     );
   }

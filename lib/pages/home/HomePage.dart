@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
           NestedScrollView(
               headerSliverBuilder: (context, innerBoxIsScrolled) => [CustomAppbar()],
               body: ListView.builder(
-                itemCount: 50,
+                itemCount: 0,
                 itemBuilder: (context, index) {
                 var k = Random();
                 int r = k.nextInt(200);
