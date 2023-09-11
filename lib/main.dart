@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy/controllers/JWTController/JWTController.dart';
+import 'package:handy/pages/Auth/Options/Options.dart';
 import 'package:handy/pages/Auth/SignUp/SignUp.dart';
 import 'package:handy/pages/home/HomePage.dart';
 import 'package:handy/utils/Theme/theme.dart';

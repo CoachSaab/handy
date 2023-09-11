@@ -1,0 +1,1 @@
+//write code to shor an array 
