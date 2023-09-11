@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy/controllers/JWTController/JWTController.dart';
+import 'package:handy/pages/Auth/SignUp/SignUp.dart';
 import 'package:handy/pages/home/HomePage.dart';
 import 'package:handy/utils/Theme/theme.dart';
 import 'package:hive/hive.dart';
@@ -24,14 +25,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   var jwtController = Get.put(JWTController());
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context)  {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: lightTheme,
-      home:  HomePage(),
+      home:  Obx(() => jwtController.isAuth.value ? const HomePage() : const SignUp()),
       debugShowCheckedModeBanner: false,
     );
   }
