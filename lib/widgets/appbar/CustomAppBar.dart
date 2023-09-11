@@ -24,7 +24,7 @@ class CustomAppbar extends StatelessWidget {
           ),
         ),
         child: FlexibleSpaceBar(
-          
+          collapseMode: CollapseMode.none,
           background: Center(child: AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
