@@ -9,7 +9,7 @@ class SignUp extends StatelessWidget {
         body: Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment(0.5,-0.5),
+          begin: Alignment(0.5, -0.5),
           end: Alignment(0.75, 1.5),
           colors: [
             Color(0xFFFFEDFF),
@@ -37,14 +37,29 @@ class SignUp extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(style: BorderStyle.none,width: 0)
+                  ),
+                  filled: true,
+                  fillColor: Color(0xFFD9D9D9),
+                ),
+              ),
+            ),            Container(
+              height: 17,
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(style: BorderStyle.none,width: 0),
 
-                decoration: InputDecoration(border: OutlineInputBorder()),
+                  ),
+                  filled: true,
+                  fillColor: Color(0xFFD9D9D9),
+                ),
               ),
             ),
-            TextField(),
-            ElevatedButton(onPressed: () {
-              
-            }, child: Text("Submit"))
+
+             ElevatedButton(onPressed: () {}, child: Text("Submit"))
           ],
         ),
       ),
