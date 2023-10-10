@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Notification;
 import 'package:get/get.dart';
 import 'package:handy/controllers/JWTController/JWTController.dart';
-import 'package:handy/pages/Auth/Options/Options.dart';
-import 'package:handy/pages/Auth/SignUp/SignUp.dart';
+import 'package:handy/pages/Notification/Notificaton.dart';
 import 'package:handy/pages/home/HomePage.dart';
 import 'package:handy/utils/Theme/theme.dart';
 import 'package:hive/hive.dart';
@@ -31,8 +30,9 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       title: 'Handy',
       theme: lightTheme,
-      home:  Obx(() => jwtController.isAuth.value ? const HomePage() : const Options()),
+      home:  Obx(() => jwtController.isAuth.value ? const HomePage() : const Notification()),
       debugShowCheckedModeBanner: false,
     );
   }
 }
+
