@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:handy/widgets/drawer/customDrawer.dart';
 
-class Notification extends StatefulWidget {
-  const Notification({super.key});
+class NotificationPage extends StatefulWidget {
+  const NotificationPage({super.key});
 
   @override
-  State<Notification> createState() => _NotificationState();
+  State<NotificationPage> createState() => _NotificationPageState();
 }
 
-class _NotificationState extends State<Notification> {
+class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: CustomDrawer(),
+        // drawer: CustomDrawer(),
         appBar: AppBar(
           shadowColor: Colors.brown,
           actions: [
@@ -20,9 +19,7 @@ class _NotificationState extends State<Notification> {
             IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
           ],
         ),
-
         body: ListView.builder(
-
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.all(9.0),
             child: Row(

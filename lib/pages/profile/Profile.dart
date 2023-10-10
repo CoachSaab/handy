@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:handy/widgets/appbar/CustomAppBar.dart';
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+
+
+class Profile extends StatefulWidget {
+  const Profile({super.key});
 
   @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [CustomAppbar()],
-          body: Center(child: Text("data"),)),
+
     );
   }
 }
