@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:handy/widgets/appbar/CustomAppBar.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
