@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:handy/widgets/drawer/customDrawer.dart';
 
 class Notification extends StatefulWidget {
   const Notification({super.key});
@@ -11,11 +12,17 @@ class _NotificationState extends State<Notification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        bottomNavigationBar:
-            BottomAppBar(child: Container(color: Colors.green, height: 20)),
+        drawer: CustomDrawer(),
+        appBar: AppBar(
+          shadowColor: Colors.brown,
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
+          ],
+        ),
+
         body: ListView.builder(
-          itemCount: 6,
+
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.all(9.0),
             child: Row(
@@ -38,7 +45,7 @@ class _NotificationState extends State<Notification> {
                         child: Container(
                           width: 180,
                           color: Colors.grey,
-                          height: 10,
+                          height: 6,
                         ),
                       ),
                       Padding(
@@ -46,15 +53,15 @@ class _NotificationState extends State<Notification> {
                         child: Container(
                           width: 150,
                           color: Colors.grey,
-                          height: 8,
+                          height: 6,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(3.0),
                         child: Container(
-                          width: 100,
+                          width: 130,
                           color: Colors.grey,
-                          height: 9,
+                          height: 6,
                         ),
                       )
                     ]),
