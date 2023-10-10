@@ -8,7 +8,7 @@ class CustomBottomBar extends StatelessWidget {
       duration: Duration.zero,
       bottom: 10,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(9))),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(9))),
         child: Container(
           // decoration: ,
           width: MediaQuery.of(context).size.width - 30,
@@ -27,16 +27,16 @@ class CustomBottomBar extends StatelessWidget {
             children: [
               IconButton(onPressed: () {
 
-              }, icon: Icon(Icons.home)),
+              }, icon: const Icon(Icons.home)),
               IconButton(onPressed: () {
 
-              }, icon: Icon(Icons.search)),
+              }, icon: const Icon(Icons.search)),
               IconButton(onPressed: () {
 
-              }, icon: Icon(Icons.manage_accounts)),
+              }, icon: const Icon(Icons.manage_accounts)),
               IconButton(onPressed: () {
 
-              }, icon: Icon(Icons.menu_sharp))
+              }, icon: const Icon(Icons.menu_sharp))
               ],
           ),
         ),
