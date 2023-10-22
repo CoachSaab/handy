@@ -127,7 +127,7 @@ class _SignUpState extends State<SignUp> {
                     const Center(
                         child: Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text("Login Option Icons "),
+                      child: Text("Login Options Icons "),
                     ))
                   ],
                 )),

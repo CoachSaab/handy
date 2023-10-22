@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:handy/pages/Option/Options/Options.dart';
 import 'package:handy/pages/Notification/Notificaton.dart';
+import 'package:handy/pages/home/HomePage.dart';
 import 'package:handy/pages/profile/Profile.dart';
 
 
@@ -11,7 +13,7 @@ class CustomBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedPositioned(
       duration: Duration.zero,
-      bottom: 10,
+      bottom: 18,
       child: Card(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(9))),
@@ -31,10 +33,9 @@ class CustomBottomBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.handshake)),
-              IconButton(
-                  onPressed: () {Get.to(Profile());}, icon: const Icon(Icons.manage_accounts)),
+              IconButton(onPressed: () {Get.to(HomePage());}, icon: const Icon(Icons.home)),
+              IconButton(onPressed: () {Get.to(Options());}, icon: const Icon(Icons.handshake)),
+              IconButton(onPressed: () {Get.to(Profile());}, icon: const Icon(Icons.manage_accounts)),
               IconButton(onPressed: () {Get.to(NotificationPage());}, icon: const Icon(Icons.mail))
             ],
           ),
