@@ -16,6 +16,7 @@ class CustomAppbar extends StatelessWidget {
         IconButton(onPressed: (){}, icon: Icon(Icons.notifications))
       ],
       flexibleSpace: Container(
+
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(0.71, -0.71),
@@ -24,11 +25,11 @@ class CustomAppbar extends StatelessWidget {
           ),
         ),
         child: FlexibleSpaceBar(
-          collapseMode: CollapseMode.none,
+          collapseMode: CollapseMode.parallax,
           background: Center(child: AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
-                    "",
+                    "welcome !",
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 19,

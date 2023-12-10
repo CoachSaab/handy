@@ -31,7 +31,7 @@ class Options extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 50),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.pink,
+                  primary: Colors.grey,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),

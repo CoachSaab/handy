@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:handy/ServiceProfile/ServiceProfile.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
+import 'package:get/get.dart'; // Import GetX
+
 
 class ServicePage extends StatelessWidget {
   const ServicePage({super.key});
@@ -63,7 +66,6 @@ class ServicePage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Add action for the first button
                   },
                   child: Text('plumber',
                     style: TextStyle(fontSize: 11),
@@ -81,7 +83,7 @@ class ServicePage extends StatelessWidget {
 
 
                   onPressed: () {
-                    // Add action for the second button
+
                   },
                   child: Text('foreman ',
                     style: TextStyle(fontSize:9 ),
@@ -94,7 +96,7 @@ class ServicePage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // Add action for the third button
+
                   },
                   child: Text('painter',
                     style: TextStyle(fontSize: 8),
@@ -201,3 +203,4 @@ class ServicePage extends StatelessWidget {
     );
   }
 }
+
