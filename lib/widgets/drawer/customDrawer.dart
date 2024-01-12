@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:handy/pages/Credits/CreditsPage.dart';
+import 'package:handy/pages/About/AboutPage.dart';
+import 'package:handy/pages/Theme/ThemePage.dart';
+import 'package:handy/pages/profile/Profile.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key});
@@ -19,14 +23,21 @@ class CustomDrawer extends StatelessWidget {
                 title: Text("Profile"),
                 leading: Icon(Icons.account_circle),
                 onTap: () {
-                  print("Click");
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Profile() ),
+                  );
                 },
               ),
               ListTile(
                 title: Text("Settings"),
                 leading: Icon(Icons.settings),
                 onTap: () {
-                  print("Click");
+                     Navigator.push(
+                         context, 
+                         MaterialPageRoute(
+                             builder: (context) => AboutPage()),);
                 },
               ),
               ListTile(
@@ -34,27 +45,48 @@ class CustomDrawer extends StatelessWidget {
                 leading: Icon(Icons.money),
                 onTap: () {
                   print("Click");
+                  Navigator.push(
+                      context,
+                    MaterialPageRoute(
+                      builder: (context) => CreditsPage()
+                  ),
+                  );
                 },
               ),
               ListTile(
                 title: Text("Themes"),
                 leading: Icon(Icons.add_circle),
                 onTap: () {
-                  print("Click");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ThemePage()
+                  ),
+                  );
                 },
               ),
               ListTile(
                 title: Text("About"),
                 leading: Icon(Icons.account_tree_outlined),
                 onTap: () {
-                  print("Click");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context)=>AboutPage()
+                  ),
+                );
                 },
               ),
               ListTile(
                 title: Text("License"),
                 leading: Icon(Icons.local_police_rounded),
                 onTap: () {
-                  print("Click");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LicensePage()
+                  ),
+                  );
                 },
               ),
             ],

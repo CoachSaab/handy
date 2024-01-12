@@ -42,6 +42,7 @@ class _ProfileState extends State<Profile> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+
             ),
           ),
           flexibleSpace: Align(
