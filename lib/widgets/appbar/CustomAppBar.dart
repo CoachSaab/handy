@@ -29,7 +29,7 @@ class CustomAppbar extends StatelessWidget {
           background: Center(child: AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
-                    "welcome !",
+                    "",
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 19,
@@ -40,7 +40,7 @@ class CustomAppbar extends StatelessWidget {
           ),
         ),
       ),
-      expandedHeight: 200,
+      expandedHeight: 0,
     );
   }
 }

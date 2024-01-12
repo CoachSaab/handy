@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "546657970181",
+    "project_id": "handy-f9047",
+    "storage_bucket": "handy-f9047.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546657970181:android:b40bdaeab6783cf79a546c",
+        "android_client_info": {
+          "package_name": "com.example.handy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBclyiXum_wGdZdkud9DBvDsd7Wf7gIEL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
