@@ -79,22 +79,37 @@ class _ProfileState extends State<Profile> {
           ),
         ),
         body: Column(
+
             children: [
-            // Create the first curved container
-            buildCurvedContainer(200, 15, 15, EdgeInsets.only(top: 40)),
 
-        // Create the remaining curved containers
-        buildCurvedContainer(250, 4.7, 5, EdgeInsets.only(top: 120, left: 50)),
-        buildCurvedContainer(200, 5, 2, EdgeInsets.only(top: 5, left: 2)),
-        buildCurvedContainer(165, 5, 5, EdgeInsets.only(top: 5, right: 37)),
 
-        buildCurvedContainer(250, 4.7, 5, EdgeInsets.only(top: 80, left: 50)),
-        buildCurvedContainer(200, 5, 2, EdgeInsets.only(top: 5, left: 2)),
-    buildCurvedContainer(165, 5, 5, EdgeInsets.only(top: 5, right: 37)),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Card(child:
+                ListTile(
+                  title: Text('HARSH SHRMA'),
+                  leading: Icon(Icons.verified_user),
+                ),),
+              ),
 
-    buildCurvedContainer(250, 4.7, 5, EdgeInsets.only(top: 80, left: 50)),
-    buildCurvedContainer(200, 5, 2, EdgeInsets.only(top: 5, left: 2)),
-    buildCurvedContainer(165, 5, 5, EdgeInsets.only(top: 5, right: 37)),
+              Card(child:
+              ListTile(
+                title: Text('harsh@gmail.com'),
+                leading: Icon(Icons.mail_outline_outlined),
+              ),),
+
+              Card(child:
+              ListTile(
+                title: Text('********'),
+                leading: Icon(Icons.lock_open_rounded),
+              ),),
+
+              Card(child:
+                ListTile(
+                  title: Text('6296xxxxxxx'),
+                  leading: Icon(Icons.phone_android_outlined),
+                ),),
+
 
     // Create the CustomBottomBar
     Expanded(

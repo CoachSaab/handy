@@ -1,10 +1,10 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:handy/ServiceProfile/ServiceProfile.dart';
 import 'package:handy/widgets/appbar/CustomAppBar.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 import 'package:handy/widgets/drawer/customDrawer.dart';
 import 'package:get/get.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     GestureDetector(
                         onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceProfile(),));
                           print("object");
                         },
                         child: SingleChildScrollView(
@@ -92,7 +93,11 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         children: [
                           SizedBox(
-                          child: Text('Service near me :-'),
+                          child: Text('Service near me :-',style:
+                          TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          ),
                           ),
                         ],
                       ),
