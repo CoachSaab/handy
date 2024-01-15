@@ -69,6 +69,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),)),),
       body: Stack(
         alignment: Alignment.center,
         children: [
