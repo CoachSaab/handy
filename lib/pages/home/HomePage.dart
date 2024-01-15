@@ -209,6 +209,72 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
 
+
+                    SizedBox(height:20),
+
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 300,
+                              width: 175,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey,
+                              ),
+                            ),
+                            SizedBox(width: 20),
+
+                            Container(
+                              height: 300,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey,
+                              ),
+                            ),
+                              SizedBox(width: 20),
+
+                            Container(
+                              height: 300,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey,
+                              ),
+                            ),
+                            SizedBox(width: 20),
+
+                            Container(
+                              height: 300,
+                              width: 170,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey,
+                              ),
+                            ),
+                            SizedBox(width: 20),
+
+                              Container(
+                                height: 300,
+                                width: 170,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey,
+                                ),
+
+
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+
+
                     SizedBox(height:30),
 
 
@@ -219,7 +285,7 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey,
                       ),
-                      child: Text('show more',textAlign: TextAlign.center,),
+                      child: Text('show more ',textAlign: TextAlign.center,),
                     ),
 
                   ],
