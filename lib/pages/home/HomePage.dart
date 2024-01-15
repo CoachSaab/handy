@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:handy/ServiceProfile/ServiceProfile.dart';
 import 'package:handy/widgets/appbar/CustomAppBar.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 import 'package:handy/widgets/drawer/customDrawer.dart';
+import 'package:get/get.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,6 +28,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     GestureDetector(
                         onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceProfile(),));
                           print("object");
                         },
                         child: SingleChildScrollView(
@@ -38,7 +42,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            const SizedBox(width: 15),
+                            SizedBox(width: 15),
                             Column(
                               children: [
                                 Container(
@@ -48,7 +52,7 @@ class HomePage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.grey,
                                   ),                                ),
-                                const SizedBox(height: 16),
+                                SizedBox(height: 16),
 
                                 Container(
                                   height: 120,
@@ -62,29 +66,38 @@ class HomePage extends StatelessWidget {
 
                           ]),
                         )),
-                    const SizedBox(height:10),
+                    SizedBox(height:10),
 
                     Padding(
                       padding: const EdgeInsets.all(6.0),
-                      child: Container(
-                        height: 20,
-                        width: double.maxFinite,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.grey,
-                        ),
-                        child: const Text('+ more',textAlign: TextAlign.center),
+                      child: Row(
+
+                        children: [
+                          Container(
+                            height: 20,
+                            width: 365,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey,
+                            ),
+                            child: Text('+ more',textAlign: TextAlign.center),
+                          ),
+                        ],
                       ),
                     ),
 
-                    const SizedBox(height: 20,),
+                    SizedBox(height: 20,),
 
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           SizedBox(
-                          child: Text('Service near me :-'),
+                          child: Text('Service near me :-',style:
+                          TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          ),
                           ),
                         ],
                       ),
@@ -131,7 +144,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height:10),
+                    SizedBox(height:10),
 
                     Container(
                       height: 200,
@@ -142,7 +155,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height:5),
+                    SizedBox(height:5),
 
 
                     Row(
@@ -156,9 +169,9 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
 
-                        const SizedBox(width: 5),
+                        SizedBox(width: 5),
 
-                        const SizedBox(
+                        SizedBox(
                           child: Text('carpentry',style: TextStyle(
                             fontSize: 10,
                             fontWeight:FontWeight.bold,
@@ -166,14 +179,14 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
 
-                        const SizedBox(width: 150),
+                        SizedBox(width: 150),
 
-                        const SizedBox(
+                        SizedBox(
                           child: Icon(
                             Icons.shopping_bag_outlined,
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           child: Text('100',style: TextStyle(
                             fontSize: 10,
                             fontWeight:FontWeight.bold,
@@ -182,14 +195,14 @@ class HomePage extends StatelessWidget {
                         ),
 
 
-                        const SizedBox(width: 30),
+                        SizedBox(width: 30),
 
-                        const SizedBox(
+                        SizedBox(
                           child: Icon(
                             Icons.remove_red_eye_outlined,
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           child: Text('2.1k',style: TextStyle(
                             fontSize: 10,
                             fontWeight:FontWeight.bold,
@@ -202,7 +215,7 @@ class HomePage extends StatelessWidget {
                     ),
 
 
-                    const SizedBox(height:20),
+                    SizedBox(height:20),
 
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -218,7 +231,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            const SizedBox(width: 20),
+                            SizedBox(width: 20),
 
                             Container(
                               height: 300,
@@ -228,7 +241,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                              const SizedBox(width: 20),
+                              SizedBox(width: 20),
 
                             Container(
                               height: 300,
@@ -238,7 +251,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            const SizedBox(width: 20),
+                            SizedBox(width: 20),
 
                             Container(
                               height: 300,
@@ -248,7 +261,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            const SizedBox(width: 20),
+                            SizedBox(width: 20),
 
                               Container(
                                 height: 300,
@@ -267,7 +280,7 @@ class HomePage extends StatelessWidget {
 
 
 
-                    const SizedBox(height:30),
+                    SizedBox(height:30),
 
 
                     Container(
@@ -277,7 +290,7 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey,
                       ),
-                      child: const Text('show more ',textAlign: TextAlign.center,),
+                      child: Text('show more ',textAlign: TextAlign.center,),
                     ),
 
                   ],
@@ -291,4 +304,24 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget _buildClickableConatiner(BuildContext context, double width,
+      double height, EdgeInsetsGeometry margin) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ServiceProfile()),
+        );
+      },
+      child: Container(
+        margin: margin,
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(9),
+          color: Colors.grey,
+        ),
+      ),
+    );
+  }
 }
