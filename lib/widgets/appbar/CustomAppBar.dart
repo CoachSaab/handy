@@ -13,7 +13,24 @@ class CustomAppbar extends StatelessWidget {
       title: Text("Home"),
       actions: [
         IconButton(onPressed: (){}, icon: Icon(Icons.search)),
-        IconButton(onPressed: (){}, icon: Icon(Icons.notifications))
+        IconButton(onPressed: (){
+          showDialog(
+              context: context,
+              builder: (BuildContext context){
+                return Align(
+                  alignment: Alignment.topRight,
+
+                  child: AlertDialog(
+                    title: Text('notifications',textAlign: TextAlign.center,),
+                  ),
+
+
+                );
+
+              },
+              );
+
+        }, icon: Icon(Icons.notifications))
       ],
       flexibleSpace: Container(
 

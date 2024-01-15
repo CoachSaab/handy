@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -9,7 +8,15 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  Widget buildCurvedContainer(double width, double height, double borderRadius, EdgeInsets margin) {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController mailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController contactNoController = TextEditingController();
+  TextEditingController classController = TextEditingController();
+  TextEditingController citizenController = TextEditingController();
+
+  Widget buildCurvedContainer(
+      double width, double height, double borderRadius, EdgeInsets margin) {
     return Container(
       width: width,
       height: height,
@@ -24,105 +31,198 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 180,
-          title:Container(
-
-            height: 90,
-            width: 90,
-            decoration: BoxDecoration(
-              color: Colors.white54,
-              borderRadius: BorderRadius.all(Radius.circular(14)),
-            ),
-            child: Center(
-              child: Text(
-                'profile',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-            ),
+      appBar: AppBar(
+        toolbarHeight: 180,
+        title: Container(
+          height: 90,
+          width: 90,
+          decoration: BoxDecoration(
+            color: Colors.white54,
+            borderRadius: BorderRadius.all(Radius.circular(14)),
           ),
-          flexibleSpace: Align(
-            alignment: Alignment.topCenter,
-            child: Opacity(
-              opacity: 0.60,
-              child: Container(
-                width: 389,
-                height: 300,
-                decoration: ShapeDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment(0.96, 0.27),
-                    end: Alignment(-0.96, -0.27),
-                    colors: [Color(0xFFC6FFD2), Color(0xFF6F7EF6), Color(0xFFFFD6FF)],
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                    ),
-                  ),
-                  shadows: [
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
-                      spreadRadius: 0,
-                    ),
-                  ],
-                ),
-                child: Text(""),
+          child: Center(
+            child: Text(
+              'profile',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
         ),
-        body: Column(
-
-            children: [
-
-
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Card(child:
-                ListTile(
-                  title: Text('HARSH SHRMA'),
-                  leading: Icon(Icons.verified_user),
-                ),),
+        flexibleSpace: Align(
+          alignment: Alignment.topCenter,
+          child: Opacity(
+            opacity: 0.60,
+            child: Container(
+              width: 389,
+              height: 300,
+              decoration: ShapeDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment(0.96, 0.27),
+                  end: Alignment(-0.96, -0.27),
+                  colors: [
+                    Color(0xFFC6FFD2),
+                    Color(0xFF6F7EF6),
+                    Color(0xFFFFD6FF)
+                  ],
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  ),
+                ),
+                shadows: [
+                  BoxShadow(
+                    color: Color(0x3F000000),
+                    blurRadius: 4,
+                    offset: Offset(0, 4),
+                    spreadRadius: 0,
+                  ),
+                ],
               ),
+              child: Text(""),
+            ),
+          ),
+        ),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 30.0),
+            child: Card(
+              child: ListTile(
+                subtitle: Text('username'),
+                title: Text(usernameController.text),
+                leading: Icon(Icons.account_circle),
+              ),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              subtitle: Text('mail'),
+              title: Text(mailController.text),
+              leading: Icon(Icons.mail_outline_outlined),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              subtitle: Text('contact no.'),
 
-              Card(child:
-              ListTile(
-                title: Text('harsh@gmail.com'),
-                leading: Icon(Icons.mail_outline_outlined),
-              ),),
+              title: Text(contactNoController.text),
+              leading: Icon(Icons.phone_android_outlined),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              subtitle: Text('category'),
 
-              Card(child:
-              ListTile(
-                title: Text('********'),
-                leading: Icon(Icons.lock_open_rounded),
-              ),),
+              title: Text(classController.text),
+              leading: Icon(Icons.track_changes_rounded),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              subtitle: Text('password'),
+              title: Text(passwordController.text),
+              leading: Icon(Icons.lock_open_rounded),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              subtitle: Text('citizen'),
+              title: Text(citizenController.text),
+              leading: Icon(Icons.flag_circle),
+            ),
+          ),
+          SizedBox(height: 20.0),
+          ElevatedButton(
+            onPressed: () {
+              // Reset the TextEditingController values
+              usernameController.clear();
+              mailController.clear();
+              passwordController.clear();
+              contactNoController.clear();
+              classController.clear();
+              citizenController.clear();
 
-              Card(child:
-                ListTile(
-                  title: Text('6296xxxxxxx'),
-                  leading: Icon(Icons.phone_android_outlined),
-                ),),
+              // Show a custom-sized AlertDialog
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return Dialog(
+                    // Set the desired width and height
+                    child: Container(
+                      width: 400.0,
+                      height: 700.0,
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextField(
+                            controller: usernameController,
+                            decoration: InputDecoration(
+                              labelText: 'Username',
+                            ),
+                          ),
+                          TextField(
+                            controller: mailController,
+                            decoration: InputDecoration(
+                              labelText: 'Mail',
+                            ),
+                          ),
+                          TextField(
+                            controller: passwordController,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                            ),
+                          ),
+                          TextField(
+                            controller: contactNoController,
+                            decoration: InputDecoration(
+                              labelText: 'Contact No.',
+                            ),
+                          ),
+                          TextField(
+                            controller: classController,
+                            decoration: InputDecoration(
+                              labelText: 'Class',
+                            ),
+                          ),
+
+                          TextField(
+                            controller: citizenController,
+                            decoration: InputDecoration(
+                              labelText: 'Citizen',
+                            ),
+                          ),
 
 
-    // Create the CustomBottomBar
-    Expanded(
-    child: Stack(
-    alignment: Alignment.bottomCenter,
-    children: [
-    Container(),
-    CustomBottomBar(),
-    ],
-    ),
-    ),
-    ],
-    ),
+                          Center(
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  // Update the card details with new values
+                                  // You can add more logic or validations here if needed
+                                });
+                                Navigator.pop(context); // Close the dialog
+                              },
+                              child: Text('Save'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+            child: Text('edit profile'),
+          ),
+        ],
+      ),
     );
   }
 }
