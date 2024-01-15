@@ -70,19 +70,14 @@ class HomePage extends StatelessWidget {
 
                     Padding(
                       padding: const EdgeInsets.all(6.0),
-                      child: Row(
-
-                        children: [
-                          Container(
-                            height: 20,
-                            width: 365,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey,
-                            ),
-                            child: Text('+ more',textAlign: TextAlign.center),
-                          ),
-                        ],
+                      child: Container(
+                        height: 20,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey,
+                        ),
+                        child: Text('+ more',textAlign: TextAlign.center),
                       ),
                     ),
 
