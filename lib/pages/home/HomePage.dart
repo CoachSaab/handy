@@ -1,10 +1,7 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:handy/ServiceProfile/ServiceProfile.dart';
 import 'package:handy/widgets/appbar/CustomAppBar.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 import 'package:handy/widgets/drawer/customDrawer.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,7 +38,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(width: 15),
+                            const SizedBox(width: 15),
                             Column(
                               children: [
                                 Container(
@@ -51,7 +48,7 @@ class HomePage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.grey,
                                   ),                                ),
-                                SizedBox(height: 16),
+                                const SizedBox(height: 16),
 
                                 Container(
                                   height: 120,
@@ -65,30 +62,25 @@ class HomePage extends StatelessWidget {
 
                           ]),
                         )),
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
 
                     Padding(
                       padding: const EdgeInsets.all(6.0),
-                      child: Row(
-
-                        children: [
-                          Container(
-                            height: 20,
-                            width: 365,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey,
-                            ),
-                            child: Text('+ more',textAlign: TextAlign.center),
-                          ),
-                        ],
+                      child: Container(
+                        height: 20,
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey,
+                        ),
+                        child: const Text('+ more',textAlign: TextAlign.center),
                       ),
                     ),
 
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
 
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         children: [
                           SizedBox(
@@ -139,7 +131,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
 
                     Container(
                       height: 200,
@@ -150,7 +142,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height:5),
+                    const SizedBox(height:5),
 
 
                     Row(
@@ -164,9 +156,9 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
 
-                        SizedBox(
+                        const SizedBox(
                           child: Text('carpentry',style: TextStyle(
                             fontSize: 10,
                             fontWeight:FontWeight.bold,
@@ -174,14 +166,14 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(width: 150),
+                        const SizedBox(width: 150),
 
-                        SizedBox(
+                        const SizedBox(
                           child: Icon(
                             Icons.shopping_bag_outlined,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           child: Text('100',style: TextStyle(
                             fontSize: 10,
                             fontWeight:FontWeight.bold,
@@ -190,14 +182,14 @@ class HomePage extends StatelessWidget {
                         ),
 
 
-                        SizedBox(width: 30),
+                        const SizedBox(width: 30),
 
-                        SizedBox(
+                        const SizedBox(
                           child: Icon(
                             Icons.remove_red_eye_outlined,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           child: Text('2.1k',style: TextStyle(
                             fontSize: 10,
                             fontWeight:FontWeight.bold,
@@ -210,7 +202,7 @@ class HomePage extends StatelessWidget {
                     ),
 
 
-                    SizedBox(height:20),
+                    const SizedBox(height:20),
 
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -226,7 +218,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
 
                             Container(
                               height: 300,
@@ -236,7 +228,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                              SizedBox(width: 20),
+                              const SizedBox(width: 20),
 
                             Container(
                               height: 300,
@@ -246,7 +238,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
 
                             Container(
                               height: 300,
@@ -256,7 +248,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
 
                               Container(
                                 height: 300,
@@ -275,7 +267,7 @@ class HomePage extends StatelessWidget {
 
 
 
-                    SizedBox(height:30),
+                    const SizedBox(height:30),
 
 
                     Container(
@@ -285,7 +277,7 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey,
                       ),
-                      child: Text('show more ',textAlign: TextAlign.center,),
+                      child: const Text('show more ',textAlign: TextAlign.center,),
                     ),
 
                   ],
@@ -299,24 +291,4 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildClickableConatiner(BuildContext context, double width,
-      double height, EdgeInsetsGeometry margin) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ServiceProfile()),
-        );
-      },
-      child: Container(
-        margin: margin,
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(9),
-          color: Colors.grey,
-        ),
-      ),
-    );
-  }
 }

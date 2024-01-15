@@ -24,4 +24,11 @@ class AuthController extends GetxController {
     var jsonData = jsonDecode(res.body);
     jwtController.setAuth(jsonData["token"]);
   }
+
+  Future signUp() async {
+    var signUpDetails = jsonEncode(
+      {""}
+    );
+  }
+
 }

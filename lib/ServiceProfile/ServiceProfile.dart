@@ -20,7 +20,7 @@ class _ServiceProfileState extends State<ServiceProfile> {
         flexibleSpace: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment(0.96, 3.27),
                   end: Alignment(-0.96, 1.17),
@@ -31,7 +31,7 @@ class _ServiceProfileState extends State<ServiceProfile> {
                   bottomRight: Radius.circular(15),
                 ),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Service Profile',
                   style: TextStyle(
@@ -53,11 +53,11 @@ class _ServiceProfileState extends State<ServiceProfile> {
                 child: Container(
                   width: 130,
                   height: 400,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white, // Replace with your desired color
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.account_circle,
                     color: Colors.grey,
                     size: 100,
@@ -73,8 +73,8 @@ class _ServiceProfileState extends State<ServiceProfile> {
         children: [
 
           Container(
-            margin: EdgeInsets.only(top: 10),
-            child: Text(
+            margin: const EdgeInsets.only(top: 10),
+            child: const Text(
               'Cook',
               style: TextStyle(
                 color: Colors.black,
@@ -87,8 +87,8 @@ class _ServiceProfileState extends State<ServiceProfile> {
           ),
 
           Container(
-            margin: EdgeInsets.only(top: 10, right: 190),
-            child: Text(
+            margin: const EdgeInsets.only(top: 10, right: 190),
+            child: const Text(
               'Name - Madan\n'
                   'Ph - 98753xxxxx\n'
                   'Address - Ludhiana\n'
@@ -111,30 +111,30 @@ class _ServiceProfileState extends State<ServiceProfile> {
             height: 110,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: Color(0xB7D9D9D9),            ),
-            margin: EdgeInsets.only(top: 1, left: 250),
-            child: Icon(
+              color: const Color(0xB7D9D9D9),            ),
+            margin: const EdgeInsets.only(top: 1, left: 250),
+            child: const Icon(
               Icons.location_on_outlined,
               size: 50,
             ),
           ),
 
           Container(
-            child: Text(
+            child: const Text(
               '  Bio :- This is for demo purpose to show how the bio looks like.',
               style: TextStyle(
                 fontWeight: FontWeight.w300,
 
               ),
             ),
-            margin: EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 10),
             width: 357,
             height: 129,
             decoration: ShapeDecoration(
-              color: Color(0xFFC5DAEE),
+              color: const Color(0xFFC5DAEE),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
               shadows: [
-                BoxShadow(
+                const BoxShadow(
                   color: Color(0x3F000000),
                   blurRadius: 4,
                   offset: Offset(0, 4),
@@ -149,7 +149,7 @@ class _ServiceProfileState extends State<ServiceProfile> {
               alignment: Alignment.bottomCenter,
               children: [
                 Container(),
-                CustomBottomBar(),
+                const CustomBottomBar(),
               ],
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:handy/pages/Auth/SignUp/SignUpPage.dart';
+import 'package:handy/pages/Auth/SignUp/SignUpPage1.dart';
 import 'package:handy/pages/home/HomePage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
@@ -205,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUpPage()),
+                      MaterialPageRoute(builder: (context) => SignUpPage1()),
                     );
                   },
                   child: const Text("Sign Up"),
