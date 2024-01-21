@@ -33,7 +33,7 @@ class _ServiceProfileState extends State<ServiceProfile> {
               ),
               child: const Center(
                 child: Text(
-                  'Service Profile',
+                  'COOK',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -72,89 +72,65 @@ class _ServiceProfileState extends State<ServiceProfile> {
       body: Column(
         children: [
 
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            child: const Text(
-              'Cook',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 25,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.bold,
-                height: 0,
-              ),
-            ),
+          Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: Card(child: ListTile(
+              title: Text('Name - Madan'),
+              leading: Icon(Icons.account_circle),
+            ),),
           ),
 
-          Container(
-            margin: const EdgeInsets.only(top: 10, right: 190),
-            child: const Text(
-              'Name - Madan\n'
-                  'Ph - 98753xxxxx\n'
-                  'Address - Ludhiana\n'
-                  'Experience - 4 yrs\n'
-                  'Citizen - Indian\n'
-                  'Rating - 5 ⭐\n'
-                  'Feedback - Honest',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w200,
-                height: 1.5, // Adjust the height value for proper spacing
-              ),
-            ),
-          ),
+          Card(child: ListTile(
+            title: Text('Ph - 94xxxxxxxx'),
+            leading: Icon(Icons.phone),
+          ),),
 
-          Container(
-            width: 110,
-            height: 110,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: const Color(0xB7D9D9D9),            ),
-            margin: const EdgeInsets.only(top: 1, left: 250),
-            child: const Icon(
-              Icons.location_on_outlined,
-              size: 50,
-            ),
-          ),
 
-          Container(
-            child: const Text(
-              '  Bio :- This is for demo purpose to show how the bio looks like.',
-              style: TextStyle(
-                fontWeight: FontWeight.w300,
+          Card(child: ListTile(
+            title: Text('Address - Ludhiana'),
+            leading: Icon(Icons.note_alt_outlined),
+          ),),
 
-              ),
-            ),
-            margin: const EdgeInsets.only(top: 10),
-            width: 357,
-            height: 129,
-            decoration: ShapeDecoration(
-              color: const Color(0xFFC5DAEE),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-              shadows: [
-                const BoxShadow(
-                  color: Color(0x3F000000),
-                  blurRadius: 4,
-                  offset: Offset(0, 4),
-                  spreadRadius: 0,
-                ),
-              ],
-            ),
-          ),
 
-          Expanded(
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Container(),
-                const CustomBottomBar(),
-              ],
-            ),
-          ),
+          Card(child: ListTile(
+            title: Text('Experience - 4 yrs'),
+            leading: Icon(Icons.add_box_sharp),
+          ),),
+
+          Card(child: ListTile(
+            title: Text(' Citizem - Indian'),
+            leading: Icon(Icons.flag_circle),
+          ),),
+
+          Card(child: ListTile(
+            title: Text('Rating - 5 ⭐️'),
+            leading: Icon(Icons.generating_tokens_outlined),
+          ),),
+
+          Card(child: ListTile(
+            title: Text('Feedback - Honest'),
+            leading: Icon(Icons.feed_outlined),
+          ),),
+
+          SizedBox(height: 20,),
+
+          ElevatedButton(onPressed: (){
+            showDialog(
+                context:context,
+                builder: (BuildContext context){
+                  return AlertDialog(
+                    title: Text('Thankyou',textAlign: TextAlign.center),
+                  );
+                },
+            );
+          },
+              child: Text('book now')),
+
+
         ],
       ),
+
     );
   }
 }
+

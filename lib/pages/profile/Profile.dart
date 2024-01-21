@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dropdown_textfield/tooltip_widget.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -14,6 +15,13 @@ class _ProfileState extends State<Profile> {
   TextEditingController contactNoController = TextEditingController();
   TextEditingController classController = TextEditingController();
   TextEditingController citizenController = TextEditingController();
+  TextEditingController citiesSelected = TextEditingController();
+  TextEditingController textEditingController = TextEditingController();
+
+  String selectedValue = "";
+
+  List<String> dropdownItems = ["Item1", "Item2", "Item3", "Item1", "Item2"];
+
 
   Widget buildCurvedContainer(
       double width, double height, double borderRadius, EdgeInsets margin) {
@@ -32,10 +40,11 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: 180,
         title: Container(
-          height: 90,
-          width: 90,
+          height: MediaQuery.of(context).size.width * 0.2,
+          width: MediaQuery.of(context).size.width * 0.2,
           decoration: BoxDecoration(
             color: Colors.white54,
             borderRadius: BorderRadius.all(Radius.circular(14)),
@@ -55,8 +64,8 @@ class _ProfileState extends State<Profile> {
           child: Opacity(
             opacity: 0.60,
             child: Container(
-              width: 389,
-              height: 300,
+              height: MediaQuery.of(context).size.width * 0.9,
+              width: MediaQuery.of(context).size.width * 9,
               decoration: ShapeDecoration(
                 gradient: LinearGradient(
                   begin: Alignment(0.96, 0.27),
@@ -109,7 +118,6 @@ class _ProfileState extends State<Profile> {
           Card(
             child: ListTile(
               subtitle: Text('contact no.'),
-
               title: Text(contactNoController.text),
               leading: Icon(Icons.phone_android_outlined),
             ),
@@ -117,7 +125,6 @@ class _ProfileState extends State<Profile> {
           Card(
             child: ListTile(
               subtitle: Text('category'),
-
               title: Text(classController.text),
               leading: Icon(Icons.track_changes_rounded),
             ),
@@ -154,8 +161,7 @@ class _ProfileState extends State<Profile> {
                   return Dialog(
                     // Set the desired width and height
                     child: Container(
-                      width: 400.0,
-                      height: 700.0,
+                      width: double.infinity,
                       padding: EdgeInsets.all(16.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -192,12 +198,7 @@ class _ProfileState extends State<Profile> {
                             ),
                           ),
 
-                          TextField(
-                            controller: citizenController,
-                            decoration: InputDecoration(
-                              labelText: 'Citizen',
-                            ),
-                          ),
+
 
 
                           Center(
