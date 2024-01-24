@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:handy/pages/Auth/SignUp/SignUpPage2.dart';
 
 class SignUpPage1 extends StatefulWidget {
   const SignUpPage1({super.key});
@@ -67,7 +68,9 @@ class _SignUpPage1State extends State<SignUpPage1> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.navigate_next_outlined),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage2(),),);
+        },
       ),
     );
   }

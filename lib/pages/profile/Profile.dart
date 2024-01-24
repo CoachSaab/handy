@@ -1,5 +1,5 @@
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:dropdown_textfield/tooltip_widget.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -15,13 +15,6 @@ class _ProfileState extends State<Profile> {
   TextEditingController contactNoController = TextEditingController();
   TextEditingController classController = TextEditingController();
   TextEditingController citizenController = TextEditingController();
-  TextEditingController citiesSelected = TextEditingController();
-  TextEditingController textEditingController = TextEditingController();
-
-  String selectedValue = "";
-
-  List<String> dropdownItems = ["Item1", "Item2", "Item3", "Item1", "Item2"];
-
 
   Widget buildCurvedContainer(
       double width, double height, double borderRadius, EdgeInsets margin) {
@@ -197,10 +190,38 @@ class _ProfileState extends State<Profile> {
                               labelText: 'Class',
                             ),
                           ),
+                          SizedBox(height: 15),
+                          DropDownTextField(
+                            textFieldDecoration:
+                                InputDecoration(hintText: "Citizen"),
+                            initialValue: "name4",
 
+                            // controller: citizenController,
+                            clearOption: true,
+                            enableSearch: true,
+                            searchDecoration:
+                                const InputDecoration(hintText: "select your nation"),
+                            validator: (value) {
+                              if (value == null) {
+                                return "Required field";
+                              } else {
+                                return null;
+                              }
+                            },
+                            dropDownItemCount: 6,
 
-
-
+                            dropDownList: const [
+                              DropDownValueModel(name: 'Indian', value: ""),
+                              DropDownValueModel(name: 'American', value: ""),
+                              DropDownValueModel(name: 'Canadian', value: ""),
+                              DropDownValueModel(name: 'Chinese', value: ""),
+                              DropDownValueModel(name: 'Australian', value: ""),
+                              DropDownValueModel(name: 'African', value: ""),
+                              DropDownValueModel(name: 'Japanese', value: ""),
+                              DropDownValueModel(name: 'Russian', value: ""),
+                            ],
+                            onChanged: (val) {},
+                          ),
                           Center(
                             child: TextButton(
                               onPressed: () {
