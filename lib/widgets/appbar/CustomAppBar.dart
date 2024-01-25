@@ -1,16 +1,18 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key});
+  final String pageTitle;
+  const CustomAppbar({Key? key, required this.pageTitle}): super(key:key);
+
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       floating: true,
-
       snap:  true,
       pinned: true,
-      title: Text("Home"),
+      title: Text(pageTitle),
       actions: [
         IconButton(onPressed: (){}, icon: Icon(Icons.search)),
         IconButton(onPressed: (){

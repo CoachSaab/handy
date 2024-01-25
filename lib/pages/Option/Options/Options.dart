@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:handy/pages/Client/Client.dart';
 import 'package:get/get.dart';
 import 'package:handy/pages/Service/Service.dart';
+import 'package:handy/widgets/appbar/CustomAppBar.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 
 class Options extends StatelessWidget {
-  const Options({super.key}); // Fix the constructor
+  const Options({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 70,
-        title: Text('Options'),
-      ),
-      body: Stack(
+       body: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+            NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) =>
+        const [CustomAppbar(pageTitle: 'Options')],
+    body: Stack(
         alignment: Alignment.center,
         children: [
           Column(
@@ -37,11 +40,12 @@ class Options extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('client',style: TextStyle(
+                    Text(' want to work?\n search clients',style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
+                      fontSize: 17
                     ),),
-                    SizedBox(width: 250),
+                    SizedBox(width: 120),
                     Icon(Icons.navigate_next,color: Colors.black,)
                   ],
                 ),
@@ -66,11 +70,12 @@ class Options extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('service',style: TextStyle(
+                    Text('want to hire?\nservices',style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
+                      fontSize: 17,
                     ),),
-                    SizedBox(width: 250),
+                    SizedBox(width: 120),
                     Icon(Icons.navigate_next,color: Colors.black,)
                   ],
                 ),
@@ -86,7 +91,9 @@ class Options extends StatelessWidget {
         ],
 
       ),
-
+      ),
+    ],
+    ),
     );
   }
 }

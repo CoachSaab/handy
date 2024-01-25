@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:handy/widgets/appbar/CustomAppBar.dart';
+
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});
@@ -11,13 +13,12 @@ class _NotificationPageState extends State<NotificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         // drawer: CustomDrawer(),
-        appBar: AppBar(
-          shadowColor: Colors.brown,
-          actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
-          ],
-        ),
+        body: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+            NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) =>
+        const [CustomAppbar(pageTitle: 'Notification')],
         body: ListView.builder(
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.all(9.0),
@@ -65,6 +66,10 @@ class _NotificationPageState extends State<NotificationPage> {
               ],
             ),
           ),
-        ));
+        )
+              ),
+              ],
+              ),
+    );
   }
 }

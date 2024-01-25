@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:handy/ServiceProfile/ServiceProfile.dart';
 import 'package:handy/widgets/bottombar/CustomBottomBar.dart';
 import 'package:get/get.dart'; // Import GetX
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dropdown_textfield/dropdown_textfield.dart';
+import 'package:handy/widgets/appbar/CustomAppBar.dart';
 
 
 class ServicePage extends StatelessWidget {
@@ -10,197 +13,139 @@ class ServicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ServicePage'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.account_circle),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Container(
-                width: double.infinity,
-                height: 24.0,
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Search',
-                    prefixIcon: Icon(Icons.search),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(13),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[300],
-                  ),
-                  // Implement your search functionality here
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16.0),
-
-                child: Text(
-                  'Types',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                  },
-                  child: Text('plumber',
-                    style: TextStyle(fontSize: 11),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.grey),
-                    padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(vertical: 6, horizontal: 20),
-                    ),
-                  ),
-
-                ),
-
-                ElevatedButton(
+        body: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+            NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) =>
+             const [CustomAppbar(pageTitle: 'Service')],
 
 
-                  onPressed: () {
-
-                  },
-                  child: Text('foreman ',
-                    style: TextStyle(fontSize:9 ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.grey),
-
-                  ),
-
-                ),
-                ElevatedButton(
-                  onPressed: () {
-
-                  },
-                  child: Text('painter',
-                    style: TextStyle(fontSize: 8),
-
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.grey),
-
-                  ),
-                ),
-
-                ElevatedButton(
-                  onPressed: () {
-                    // Add action for the fourth button
-                  },
-                  child: Text('fillter',
-                    style: TextStyle(fontSize: 8),
-                  ),
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  ),
-                ),
-
-
+    body: Column(
+        children: [
+          SizedBox(
+            child: CarouselSlider(
+              items: [
+                Container(color: Colors.red),
+                Container(color: Colors.blue),
+                Container(color: Colors.amberAccent),
+                Container(color: Colors.purpleAccent),
               ],
-            ),
-
-            Container(
-              height: 280,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 120,
-                    height: 90,
-                    color:Colors.grey,
-                  ),
-                  Container(
-                    width: 140,
-                    height: 140,
-                    color:Colors.grey,
-                  ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color:Colors.grey,
-                  ),
-
-                ],
+              options: CarouselOptions(
+                height: 200,
+                aspectRatio: 10/9,
+                viewportFraction: 1,
+                initialPage: 4,
+                enableInfiniteScroll: true,
+                reverse: true,
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 3),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.linear,
+                enlargeCenterPage: true,
+                scrollDirection: Axis.horizontal,
               ),
             ),
+          ),
 
 
 
-            Container(
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text('Tell us what are you looking for........?',style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),),
+          ),
 
-              child: Row(
+          SizedBox(height: 40),
 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 370,
-                    height: 140,
+          DropDownTextField(
+            textFieldDecoration:
+            InputDecoration(hintText: "services"),
+            enableSearch: true,
+            dropDownList: const [
+              DropDownValueModel(name: 'electician', value: ""),
+              DropDownValueModel(name: 'plumber', value: ""),
+              DropDownValueModel(name: 'carpentar', value: ""),
+              DropDownValueModel(name: 'cook', value: ""),
+              DropDownValueModel(name: 'driver', value: ""),
+              DropDownValueModel(name: 'sweeper', value: ""),
+              DropDownValueModel(name: 'labour', value: ""),
+              DropDownValueModel(name: 'garderner', value: ""),
+              DropDownValueModel(name: 'builder', value: ""),
+              DropDownValueModel(name: 'helper', value: ""),
+              DropDownValueModel(name: 'ironsmith', value: ""),
 
-                    color: Colors.grey,
+            ],
+          ),
+
+          SizedBox(height: 30),
+
+
+          ElevatedButton(
+            onPressed: () {
+              // Handle button press
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.pink, // Set the background color
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0), // Set the border radius
+              ),
+              minimumSize: Size(290, 50), // Set the width and height
+            ),
+            child: Text(
+              'Lets go!',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white, // Set the text color
+              ),
+            ),
+          ),
+
+
+
+
+          SizedBox(height: MediaQuery.of(context).size.height*0.16),
+
+             Text(' ☑️Browse profiles,ratings and portfolios',style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
                   ),
-                ],
-              ),
+                  ),
+            Text(' ☑️Contact skilled person within minutes',style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
             ),
-
-            Container(
-
-              alignment: Alignment.center,
-              height: 9,
-              child: Row(
-                mainAxisSize: MainAxisSize.min, // Reduce the gap between circles
-                children: List.generate(8, (index) {
-                  return Container(
-                    width: index ==4? 25:20,
-                    height: index==4? 25:20,
-                    decoration: BoxDecoration(
-                      color:index==4?Colors.grey[700] :Colors.grey,
-                      shape: BoxShape.circle,
-                    ),
-                  );
-                }),
-              ),
             ),
 
 
-
-            Expanded(
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  Container(), // Your content here
-                  CustomBottomBar(),
-                ],
-              ),
+           Text(' ☑️Pay only when you are 100% satisfied',style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
             ),
-          ],
-        ),
+            ),
+
+
+//✅
+
+
+
+
+
+
+             const CustomBottomBar(),
+
+        ],
+
       ),
+            ),
+
+    ],
+    ),
     );
   }
 }
 
+//give the info about different service and worker near by you
